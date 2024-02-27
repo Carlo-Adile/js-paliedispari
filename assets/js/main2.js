@@ -15,7 +15,7 @@ let x = randomNumb();
 console.log("random number is: " + x)
 
 /* l'utente inserisce un numero e prova ad indovinare pari o dispari */
-function tryLuck(userNumber) {
+function tryLuck() {
   userChoice = prompt('scegli tra pari e dispari');
   let lucky = '';
 
@@ -29,8 +29,10 @@ function tryLuck(userNumber) {
     userChoice = prompt('input incorretto! scegli tra pari e dispari');
   }
   
-  userNumber = parseInt(prompt('inserisci un numero'))
+  /* userNumber = parseInt(prompt('inserisci un numero')) */
+  userNumber = parseInt(prompt('inserisci un numero'));
   let totalNumb = userNumber + x;
+  
 
   if(totalNumb % 2 == 0 && userChoice === 'pari'){
     lucky = "hai vinto"
@@ -47,6 +49,7 @@ function tryLuck(userNumber) {
 
 let userGuess = tryLuck()
 let numbGuess = x + userNumber
+console.log("il tuo numero è: " + userNumber)
 
 console.log('visto che hai scelto: ' + userChoice + ", il numero random è: " + x + ", e il tuo numero da sommare è: " + userNumber + ', il risultato finale è: ' + numbGuess + ', quindi... ' + userGuess)
 
