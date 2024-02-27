@@ -1,8 +1,8 @@
 /* inizializzo variabili */
-
 let userChoice = ''
 let userNumber = 1
 
+/* produci il numero casuale */
 function randomNumb(min, max) {
   min = 1;
   max = 5;
@@ -10,10 +10,11 @@ function randomNumb(min, max) {
   
   return parseInt(numbToAdd);
 }
-
+/* otteniamo il numero casuale */
 let x = randomNumb();
 console.log("random number is: " + x)
 
+/* l'utente inserisce un numero e prova ad indovinare pari o dispari */
 function tryLuck(userNumber) {
   userChoice = prompt('scegli tra pari e dispari');
   let lucky = '';
@@ -25,8 +26,7 @@ function tryLuck(userNumber) {
     userChoice = 'pari'
   }
   else{
-    console.log('you entered an invalid input, try again!')
-    return 'invalid';
+    userChoice = prompt('input incorretto! scegli tra pari e dispari');
   }
   
   userNumber = parseInt(prompt('inserisci un numero'))
@@ -47,7 +47,6 @@ function tryLuck(userNumber) {
 
 let userGuess = tryLuck()
 let numbGuess = x + userNumber
-/* console.log(userGuess) */
 
 console.log('visto che hai scelto: ' + userChoice + ", il numero random è: " + x + ", e il tuo numero da sommare è: " + userNumber + ', il risultato finale è: ' + numbGuess + ', quindi... ' + userGuess)
 
